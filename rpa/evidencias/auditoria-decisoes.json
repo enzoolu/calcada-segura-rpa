@@ -1,0 +1,48 @@
+{
+  "origem": "Execução HTTP com dados sintéticos na API própria",
+  "registros": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "tipo": "buraco",
+      "status": "priorizada",
+      "prioridade": "alta",
+      "regra_triagem": "buraco_degrau_confianca_alta"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "tipo": "buraco",
+      "status": "duplicada",
+      "prioridade": null,
+      "regra_triagem": "mesmo_tipo_ate_15m_em_30d",
+      "duplicada_de": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000003",
+      "tipo": "rampa_irregular",
+      "status": "priorizada",
+      "prioridade": "alta",
+      "regra_triagem": "rampa_acima_do_limiar"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000004",
+      "tipo": "trepidacao",
+      "status": "validada",
+      "prioridade": "media",
+      "regra_triagem": "tipo_de_prioridade_media"
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000005",
+      "tipo": "obstaculo",
+      "status": "validada",
+      "prioridade": "baixa",
+      "regra_triagem": "tipo_de_prioridade_baixa"
+    }
+  ],
+  "contagem_por_status": {
+    "priorizada": 2,
+    "duplicada": 1,
+    "validada": 2
+  },
+  "original_vinculado": true,
+  "total_no_relatorio_se": 3
+}

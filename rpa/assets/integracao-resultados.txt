@@ -1,0 +1,14 @@
+{"execucao": "b435778f-d89c-427c-a69a-04abe4e06da0", "processados": 5, "sucessos": 5, "falhas": 0, "priorizadas": 2, "validadas": 2, "duplicadas": 1, "rejeitadas": 0}
+{
+  "ambiente": "API local com lote sintetico",
+  "novas_antes": 5,
+  "status_depois": [
+    "priorizada",
+    "duplicada",
+    "priorizada",
+    "validada",
+    "validada"
+  ],
+  "prioridade_primeiro_buraco": "alta",
+  "relatorio_se_total": 3
+}

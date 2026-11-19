@@ -1,0 +1,82 @@
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "origem": "visao",
+    "lat": -23.5614,
+    "lon": -46.6559,
+    "foto_url": null,
+    "criado_em": "2026-11-14T16:21:56.088686+00:00",
+    "status": "nova",
+    "prioridade": null,
+    "subprefeitura": null,
+    "tipo": "buraco",
+    "confianca": 0.89
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000002",
+    "origem": "visao",
+    "lat": -23.56143,
+    "lon": -46.6559,
+    "foto_url": null,
+    "criado_em": "2026-11-14T16:21:57.088686+00:00",
+    "status": "nova",
+    "prioridade": null,
+    "subprefeitura": null,
+    "tipo": "buraco",
+    "confianca": 0.83
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000003",
+    "origem": "robo",
+    "lat": -23.5614,
+    "lon": -46.6559,
+    "foto_url": null,
+    "criado_em": "2026-11-14T16:21:58.088686+00:00",
+    "status": "nova",
+    "prioridade": null,
+    "subprefeitura": null,
+    "tipo": "rampa_irregular",
+    "inclinacao_pct": 10.4,
+    "confianca": null
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000004",
+    "origem": "robo",
+    "lat": -23.5585,
+    "lon": -46.6559,
+    "foto_url": null,
+    "criado_em": "2026-11-14T16:21:59.088686+00:00",
+    "status": "nova",
+    "prioridade": null,
+    "subprefeitura": null,
+    "tipo": "trepidacao",
+    "vibracao_rms": 0.42,
+    "confianca": null
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000005",
+    "origem": "visao",
+    "lat": -23.5723,
+    "lon": -46.598,
+    "foto_url": null,
+    "criado_em": "2026-11-14T16:22:00.088686+00:00",
+    "status": "nova",
+    "prioridade": null,
+    "subprefeitura": null,
+    "tipo": "obstaculo",
+    "confianca": 0.66
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000006",
+    "origem": "visao",
+    "lat": -29.5614,
+    "lon": -46.6559,
+    "foto_url": null,
+    "criado_em": "2026-11-14T16:22:01.088686+00:00",
+    "status": "nova",
+    "prioridade": null,
+    "subprefeitura": null,
+    "tipo": "calcada_quebrada",
+    "confianca": 0.88
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "tipo": "calcada_quebrada",
+  "confianca": 0.5589,
+  "origem": "vídeo de campo processado offline",
+  "localizacao": "coordenadas de teste para a Sé",
+  "enfileiradas_com_api_desligada": 1,
+  "pendentes_apos_reenvio": 0,
+  "separadas_para_revisao": 1,
+  "registros_apos_envio_repetido": 1,
+  "status_apos_triagem": "validada",
+  "prioridade": "baixa",
+  "subprefeitura": "SE",
+  "processados_ao_repetir_triagem": 0,
+  "foto_verificada": true,
+  "ocorrencias_no_relatorio": 1
+}

@@ -1,0 +1,110 @@
+{
+  "ambiente": "API local HTTP, painel Chromium e dados sintéticos",
+  "antes": 5,
+  "depois": {
+    "status": {
+      "priorizada": 2,
+      "duplicada": 1,
+      "validada": 2
+    },
+    "relatorio_se": 3
+  },
+  "reexecucao_processados": 0,
+  "registro_sucesso": {
+    "execucao": "61c666c6-d4c6-4644-8d9e-17512c7c55c3",
+    "modo": "api",
+    "inicio": "2026-11-14T17:06:32.515475+00:00",
+    "fim": "2026-11-14T17:06:32.712492+00:00",
+    "contagens": {
+      "processados": 5,
+      "sucessos": 5,
+      "falhas": 0,
+      "priorizadas": 2,
+      "validadas": 2,
+      "duplicadas": 1,
+      "rejeitadas": 0
+    },
+    "eventos": [
+      {
+        "evento": "triagem_gravada",
+        "data_hora": "2026-11-14T17:06:32.705493+00:00",
+        "item": 1,
+        "status": "priorizada",
+        "prioridade": "alta"
+      },
+      {
+        "evento": "triagem_gravada",
+        "data_hora": "2026-11-14T17:06:32.707596+00:00",
+        "item": 2,
+        "status": "duplicada",
+        "prioridade": null,
+        "codigo": "mesmo_tipo_ate_15m_em_30d"
+      },
+      {
+        "evento": "triagem_gravada",
+        "data_hora": "2026-11-14T17:06:32.709201+00:00",
+        "item": 3,
+        "status": "priorizada",
+        "prioridade": "alta"
+      },
+      {
+        "evento": "triagem_gravada",
+        "data_hora": "2026-11-14T17:06:32.710564+00:00",
+        "item": 4,
+        "status": "validada",
+        "prioridade": "media"
+      },
+      {
+        "evento": "triagem_gravada",
+        "data_hora": "2026-11-14T17:06:32.711989+00:00",
+        "item": 5,
+        "status": "validada",
+        "prioridade": "baixa"
+      }
+    ]
+  },
+  "registro_falha": {
+    "execucao": "7e17bac1-0a6f-4feb-afcd-01936b274fac",
+    "modo": "api",
+    "inicio": "2026-11-14T17:06:41.549574+00:00",
+    "fim": "2026-11-14T17:06:44.695856+00:00",
+    "contagens": {
+      "processados": 0,
+      "sucessos": 0,
+      "falhas": 1,
+      "priorizadas": 0,
+      "validadas": 0,
+      "duplicadas": 0,
+      "rejeitadas": 0
+    },
+    "eventos": [
+      {
+        "evento": "tentativa_falhou",
+        "data_hora": "2026-11-14T17:06:41.693080+00:00",
+        "operacao": "GET",
+        "tentativa": 1,
+        "codigo": "api_indisponivel"
+      },
+      {
+        "evento": "tentativa_falhou",
+        "data_hora": "2026-11-14T17:06:42.694167+00:00",
+        "operacao": "GET",
+        "tentativa": 2,
+        "codigo": "api_indisponivel"
+      },
+      {
+        "evento": "tentativa_falhou",
+        "data_hora": "2026-11-14T17:06:44.695620+00:00",
+        "operacao": "GET",
+        "tentativa": 3,
+        "codigo": "api_indisponivel"
+      },
+      {
+        "evento": "lote_interrompido",
+        "data_hora": "2026-11-14T17:06:44.695672+00:00",
+        "codigo": "api_indisponivel"
+      }
+    ]
+  },
+  "codigo_saida_na_falha": 2
+}

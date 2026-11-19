@@ -1,0 +1,26 @@
+{
+  "navegador": "158.0.8127.36",
+  "casos": [
+    "Aguardou atualização automática de Na fila para Validada",
+    "Abriu a foto recuperada pela API no navegador",
+    "Baixou o relatório JSON e conferiu seus campos",
+    "Conferiu a tabela e o mapa em tela de 390 px",
+    "Preservou a última consulta após desligar a API",
+    "Clicou em Ver original na duplicada e selecionou relatório da Sé"
+  ],
+  "falha": {
+    "tentativas": [
+      1,
+      2,
+      3
+    ],
+    "codigo": 2,
+    "log": "falha-leitura.json"
+  },
+  "video": {
+    "arquivo": "demonstracao-rpa.mp4",
+    "duracao_segundos": 97.8,
+    "audio": "pt-BR",
+    "legendas": "gravadas no vídeo"
+  }
+}

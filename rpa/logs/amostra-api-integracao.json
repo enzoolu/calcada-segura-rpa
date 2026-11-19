@@ -1,0 +1,53 @@
+{
+  "execucao": "b435778f-d89c-427c-a69a-04abe4e06da0",
+  "modo": "api",
+  "inicio": "2026-11-14T16:28:55.213002+00:00",
+  "fim": "2026-11-14T16:28:55.394774+00:00",
+  "contagens": {
+    "processados": 5,
+    "sucessos": 5,
+    "falhas": 0,
+    "priorizadas": 2,
+    "validadas": 2,
+    "duplicadas": 1,
+    "rejeitadas": 0
+  },
+  "eventos": [
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:28:55.387589+00:00",
+      "item": 1,
+      "status": "priorizada",
+      "prioridade": "alta"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:28:55.389309+00:00",
+      "item": 2,
+      "status": "duplicada",
+      "prioridade": null,
+      "codigo": "mesmo_tipo_ate_15m_em_30d"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:28:55.391026+00:00",
+      "item": 3,
+      "status": "priorizada",
+      "prioridade": "alta"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:28:55.392725+00:00",
+      "item": 4,
+      "status": "validada",
+      "prioridade": "media"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:28:55.394340+00:00",
+      "item": 5,
+      "status": "validada",
+      "prioridade": "baixa"
+    }
+  ]
+}

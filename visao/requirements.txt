@@ -1,0 +1,4 @@
+ultralytics==8.4.212
+opencv-python>=4.7,<5
+httpx>=0.28,<1
+PyYAML>=6,<7

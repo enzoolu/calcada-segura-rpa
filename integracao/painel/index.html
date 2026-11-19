@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calçada Segura</title>
+<link rel="stylesheet" href="painel/estilo.css">
+<script src="painel/painel.js" defer></script>
+</head>
+<body>
+<header><div class="wrap top"><div><strong>Calçada Segura</strong><span>Inspeção de mobilidade urbana</span></div><span class="mode">MVP local · dados de demonstração</span></div></header>
+<main class="wrap">
+  <section class="intro">
+    <div><p class="eyebrow">Central de triagem</p><h1>Ocorrências na calçada</h1></div>
+    <button type="button" id="atualizar">Atualizar dados</button>
+  </section>
+  <p id="info" role="status">Buscando ocorrências…</p>
+  <dl class="indicadores">
+    <div><dt>Na fila</dt><dd id="nova">—</dd></div>
+    <div><dt>Prioridade alta</dt><dd id="priorizada">—</dd></div>
+    <div><dt>Validadas</dt><dd id="validada">—</dd></div>
+    <div><dt>Duplicadas</dt><dd id="duplicada">—</dd></div>
+  </dl>
+  <div class="grid">
+    <section class="panel">
+      <div class="panel-head"><h2>Localização</h2><p>Limites das subprefeituras de São Paulo</p></div>
+      <svg id="mapa" viewBox="0 0 400 410" role="img" aria-label="Mapa de São Paulo com ocorrências georreferenciadas"></svg>
+      <p class="legenda"><i class="alta"></i> Alta <i class="nova"></i> Nova <i class="validada"></i> Validada <i class="duplicada"></i> Duplicada</p>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h2>Registros da API</h2><p>A prioridade e o território são preenchidos pelo RPA.</p></div>
+      <div class="scroll"><table><thead><tr><th scope="col">Ocorrência</th><th scope="col">Situação</th><th scope="col">Subprefeitura</th><th scope="col">Decisão</th><th scope="col">Evidência</th></tr></thead><tbody id="registros"></tbody></table></div>
+      <div class="relatorio">
+        <div><h3>Relatório por região</h3><label class="sr" for="regiao">Subprefeitura</label><select id="regiao" disabled></select></div>
+        <div class="resumo-regional">
+          <output id="relatorio">Sem relatório no lote atual.</output>
+          <a id="baixar-relatorio" hidden download>Baixar relatório JSON</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="wrap">FIAP · Global Solution CitizenTech 2026.2 <span>Geometrias · GeoSampa</span></footer>
+</body>
+</html>

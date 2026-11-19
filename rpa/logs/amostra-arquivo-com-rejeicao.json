@@ -1,0 +1,61 @@
+{
+  "execucao": "ad567103-cbd8-4c17-827b-67c9b865d179",
+  "modo": "arquivo",
+  "inicio": "2026-11-14T16:26:56.322767+00:00",
+  "fim": "2026-11-14T16:26:56.462364+00:00",
+  "contagens": {
+    "processados": 6,
+    "sucessos": 5,
+    "falhas": 1,
+    "priorizadas": 2,
+    "validadas": 2,
+    "duplicadas": 1,
+    "rejeitadas": 1
+  },
+  "eventos": [
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:26:56.460240+00:00",
+      "item": 1,
+      "status": "priorizada",
+      "prioridade": "alta"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:26:56.460696+00:00",
+      "item": 2,
+      "status": "duplicada",
+      "prioridade": null,
+      "codigo": "mesmo_tipo_ate_15m_em_30d"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:26:56.461130+00:00",
+      "item": 3,
+      "status": "priorizada",
+      "prioridade": "alta"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:26:56.461475+00:00",
+      "item": 4,
+      "status": "validada",
+      "prioridade": "media"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:26:56.461844+00:00",
+      "item": 5,
+      "status": "validada",
+      "prioridade": "baixa"
+    },
+    {
+      "evento": "triagem_gravada",
+      "data_hora": "2026-11-14T16:26:56.462150+00:00",
+      "item": 6,
+      "status": "rejeitada",
+      "prioridade": null,
+      "codigo": "fora_da_area_mapeada"
+    }
+  ]
+}

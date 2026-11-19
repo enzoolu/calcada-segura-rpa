@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="CalcadaSegura" targetNamespace="https://calcada-segura.example/bpmn">
+  <bpmn:process id="Triagem" isExecutable="false" name="Triagem territorial de ocorrências">
+    <bpmn:startEvent id="Inicio" />
+    <bpmn:task id="Leitura" name="Carregar ocorrências" />
+    <bpmn:exclusiveGateway id="Item" name="Há item na fila?" />
+    <bpmn:task id="Validar" name="Validar dados e localizar" />
+    <bpmn:exclusiveGateway id="Valido" name="Dados válidos?" />
+    <bpmn:exclusiveGateway id="Duplicar" name="Duplicada?" />
+    <bpmn:task id="Priorizar" name="Definir prioridade" />
+    <bpmn:task id="Gravar" name="Gravar decisão" />
+    <bpmn:task id="Relatorio" name="Exportar relatório e auditoria" />
+    <bpmn:endEvent id="Fim" />
+    <bpmn:task id="Falha" name="Auditar falha de leitura" />
+    <bpmn:endEvent id="FimFalha" />
+    <bpmn:task id="Rejeitar" name="Rejeitar ou enviar para revisão" />
+    <bpmn:task id="Marcar" name="Marcar duplicada" />
+    <bpmn:boundaryEvent id="ErroLeitura" attachedToRef="Leitura">
+      <bpmn:errorEventDefinition id="ErroLeituraDef" />
+    </bpmn:boundaryEvent>
+    <bpmn:textAnnotation id="NotaRegistro">
+      <bpmn:text>PATCH falhou: auditar, preservar a ocorrência e continuar o lote. Arquivo com UUID inválido fica apenas na auditoria.</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="NotaGravar" sourceRef="Gravar" targetRef="NotaRegistro" />
+    <bpmn:sequenceFlow id="Fluxo0" sourceRef="Inicio" targetRef="Leitura" />
+    <bpmn:sequenceFlow id="Fluxo1" sourceRef="Leitura" targetRef="Item" />
+    <bpmn:sequenceFlow id="Fluxo2" sourceRef="Item" targetRef="Validar" name="Sim" />
+    <bpmn:sequenceFlow id="Fluxo3" sourceRef="Item" targetRef="Relatorio" name="Não" />
+    <bpmn:sequenceFlow id="Fluxo4" sourceRef="Validar" targetRef="Valido" />
+    <bpmn:sequenceFlow id="Fluxo5" sourceRef="Valido" targetRef="Duplicar" name="Sim" />
+    <bpmn:sequenceFlow id="Fluxo6" sourceRef="Valido" targetRef="Rejeitar" name="Não" />
+    <bpmn:sequenceFlow id="Fluxo7" sourceRef="Duplicar" targetRef="Priorizar" name="Não" />
+    <bpmn:sequenceFlow id="Fluxo8" sourceRef="Duplicar" targetRef="Marcar" name="Sim" />
+    <bpmn:sequenceFlow id="Fluxo9" sourceRef="Priorizar" targetRef="Gravar" />
+    <bpmn:sequenceFlow id="Fluxo10" sourceRef="Rejeitar" targetRef="Gravar" />
+    <bpmn:sequenceFlow id="Fluxo11" sourceRef="Marcar" targetRef="Gravar" />
+    <bpmn:sequenceFlow id="Fluxo12" sourceRef="Gravar" targetRef="Item" />
+    <bpmn:sequenceFlow id="Fluxo13" sourceRef="Relatorio" targetRef="Fim" />
+    <bpmn:sequenceFlow id="Fluxo14" sourceRef="ErroLeitura" targetRef="Falha" />
+    <bpmn:sequenceFlow id="Fluxo15" sourceRef="Falha" targetRef="FimFalha" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagrama">
+    <bpmndi:BPMNPlane id="Plano" bpmnElement="Triagem">
+      <bpmndi:BPMNShape id="Shape_Inicio" bpmnElement="Inicio">
+        <dc:Bounds x="24" y="111" width="34" height="34" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Leitura" bpmnElement="Leitura">
+        <dc:Bounds x="82" y="100" width="132" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Item" bpmnElement="Item" isMarkerVisible="true">
+        <dc:Bounds x="259" y="106" width="44" height="44" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="216" y="76" width="130" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Validar" bpmnElement="Validar">
+        <dc:Bounds x="353" y="100" width="144" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Valido" bpmnElement="Valido" isMarkerVisible="true">
+        <dc:Bounds x="537" y="106" width="44" height="44" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="494" y="76" width="130" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Duplicar" bpmnElement="Duplicar" isMarkerVisible="true">
+        <dc:Bounds x="627" y="106" width="44" height="44" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="584" y="76" width="130" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Priorizar" bpmnElement="Priorizar">
+        <dc:Bounds x="718" y="100" width="132" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Gravar" bpmnElement="Gravar">
+        <dc:Bounds x="897" y="100" width="128" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Relatorio" bpmnElement="Relatorio">
+        <dc:Bounds x="211" y="243" width="140" height="62" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Fim" bpmnElement="Fim">
+        <dc:Bounds x="264" y="347" width="34" height="34" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Falha" bpmnElement="Falha">
+        <dc:Bounds x="82" y="243" width="132" height="62" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_FimFalha" bpmnElement="FimFalha">
+        <dc:Bounds x="130" y="347" width="34" height="34" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Rejeitar" bpmnElement="Rejeitar">
+        <dc:Bounds x="486" y="243" width="146" height="62" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Marcar" bpmnElement="Marcar">
+        <dc:Bounds x="644" y="243" width="128" height="62" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_ErroLeitura" bpmnElement="ErroLeitura">
+        <dc:Bounds x="132" y="140" width="32" height="32" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_NotaRegistro" bpmnElement="NotaRegistro">
+        <dc:Bounds x="836" y="322" width="192" height="73" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_Fluxo0" bpmnElement="Fluxo0">
+        <di:waypoint x="58" y="128" />
+        <di:waypoint x="82" y="128" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo1" bpmnElement="Fluxo1">
+        <di:waypoint x="214" y="128" />
+        <di:waypoint x="259" y="128" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo2" bpmnElement="Fluxo2">
+        <di:waypoint x="303" y="128" />
+        <di:waypoint x="353" y="128" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="309" y="110" width="33" height="16" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo3" bpmnElement="Fluxo3">
+        <di:waypoint x="281" y="150" />
+        <di:waypoint x="281" y="243" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="287" y="166" width="33" height="16" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo4" bpmnElement="Fluxo4">
+        <di:waypoint x="497" y="128" />
+        <di:waypoint x="537" y="128" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo5" bpmnElement="Fluxo5">
+        <di:waypoint x="581" y="128" />
+        <di:waypoint x="627" y="128" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="587" y="110" width="33" height="16" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo6" bpmnElement="Fluxo6">
+        <di:waypoint x="559" y="150" />
+        <di:waypoint x="559" y="243" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="565" y="166" width="33" height="16" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo7" bpmnElement="Fluxo7">
+        <di:waypoint x="671" y="128" />
+        <di:waypoint x="718" y="128" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="677" y="110" width="33" height="16" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo8" bpmnElement="Fluxo8">
+        <di:waypoint x="649" y="150" />
+        <di:waypoint x="649" y="191" />
+        <di:waypoint x="708" y="191" />
+        <di:waypoint x="708" y="243" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="655" y="166" width="33" height="16" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo9" bpmnElement="Fluxo9">
+        <di:waypoint x="850" y="128" />
+        <di:waypoint x="897" y="128" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo10" bpmnElement="Fluxo10">
+        <di:waypoint x="632" y="261" />
+        <di:waypoint x="638" y="261" />
+        <di:waypoint x="638" y="219" />
+        <di:waypoint x="884" y="219" />
+        <di:waypoint x="884" y="143" />
+        <di:waypoint x="897" y="143" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo11" bpmnElement="Fluxo11">
+        <di:waypoint x="772" y="274" />
+        <di:waypoint x="961" y="274" />
+        <di:waypoint x="961" y="156" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo12" bpmnElement="Fluxo12">
+        <di:waypoint x="961" y="100" />
+        <di:waypoint x="961" y="48" />
+        <di:waypoint x="281" y="48" />
+        <di:waypoint x="281" y="106" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo13" bpmnElement="Fluxo13">
+        <di:waypoint x="281" y="305" />
+        <di:waypoint x="281" y="347" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo14" bpmnElement="Fluxo14">
+        <di:waypoint x="148" y="172" />
+        <di:waypoint x="148" y="243" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_Fluxo15" bpmnElement="Fluxo15">
+        <di:waypoint x="147" y="305" />
+        <di:waypoint x="147" y="347" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_NotaGravar" bpmnElement="NotaGravar">
+        <di:waypoint x="1006" y="156" />
+        <di:waypoint x="1006" y="322" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

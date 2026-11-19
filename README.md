@@ -2,7 +2,7 @@
 
 FIAP · Engenharia de Software 4ES · Global Solution CitizenTech 2026.2
 
-O RPA recebe ocorrências por arquivo JSON ou HTTP, confere os dados, localiza a subprefeitura, identifica duplicatas e devolve a prioridade para o painel próprio do protótipo. O relatório territorial organiza os registros aceitos para revisão.
+O RPA recebe ocorrências por arquivo JSON ou HTTP, confere os dados, localiza a subprefeitura, identifica duplicatas e devolve a prioridade para o painel da CitizenTech. O relatório territorial organiza os registros aceitos para revisão.
 
 | Integrante | RM |
 | --- | --- |
@@ -48,7 +48,3 @@ py -3.12 -m unittest discover -s tests -v
 ```
 
 A API das demonstrações fica restrita ao endereço local. O lote usa dados sintéticos e o cenário de campo usa uma coordenada de teste na Sé. O relatório territorial omite fotos e coordenadas. [Contrato da integração](integracao/CONTRATO.md).
-## Repositórios da equipe
-
-- [Visão Computacional](https://github.com/enzoolu/calcada-segura-cv)
-- [RPA](https://github.com/enzoolu/calcada-segura-rpa)

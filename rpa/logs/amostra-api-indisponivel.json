@@ -1,0 +1,43 @@
+{
+  "execucao": "ef4d5358-e98a-4999-9f9b-164478c842d1",
+  "modo": "api",
+  "inicio": "2026-11-14T16:28:55.734711+00:00",
+  "fim": "2026-11-14T16:28:58.857349+00:00",
+  "contagens": {
+    "processados": 0,
+    "sucessos": 0,
+    "falhas": 1,
+    "priorizadas": 0,
+    "validadas": 0,
+    "duplicadas": 0,
+    "rejeitadas": 0
+  },
+  "eventos": [
+    {
+      "evento": "tentativa_falhou",
+      "data_hora": "2026-11-14T16:28:55.855732+00:00",
+      "operacao": "GET",
+      "tentativa": 1,
+      "codigo": "api_indisponivel"
+    },
+    {
+      "evento": "tentativa_falhou",
+      "data_hora": "2026-11-14T16:28:56.856484+00:00",
+      "operacao": "GET",
+      "tentativa": 2,
+      "codigo": "api_indisponivel"
+    },
+    {
+      "evento": "tentativa_falhou",
+      "data_hora": "2026-11-14T16:28:58.857257+00:00",
+      "operacao": "GET",
+      "tentativa": 3,
+      "codigo": "api_indisponivel"
+    },
+    {
+      "evento": "lote_interrompido",
+      "data_hora": "2026-11-14T16:28:58.857293+00:00",
+      "codigo": "api_indisponivel"
+    }
+  ]
+}
